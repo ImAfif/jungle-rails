@@ -1,23 +1,22 @@
 main section.products-index,
 main section.categories-show {
-
   .products {
-    display:         flex;
-    flex-direction:  row;
-    flex-wrap:       wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     .product {
       // flex:      1;
       max-width: 260px;
       // so that footer within can be positioned absolutely
-      position:  relative;
+      position: relative;
 
-      border:        1px solid #ccc;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      padding:       15px;
+      padding: 15px;
       padding-bottom: 80px;
-      margin-top:    20px;
+      margin-top: 20px;
       // margin:        10px;
 
       header img {
@@ -30,8 +29,8 @@ main section.categories-show {
       footer {
         position: absolute;
         bottom: 0;
-        left:   0;
-        background-color: #EEE;
+        left: 0;
+        background-color: #eee;
         padding: 15px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -51,26 +50,65 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
-      &:hover {
+      body {
+        background: #333;
+      }
+      .img__wrapper {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+      }
+      .img__wrapper img {
+        width: 100%;
+      }
+      .sold_out {
+        top: 2em;
+        left: -4em;
+        color: #fff;
+        display: block;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        background-color: #a00;
+        padding: 0.5em 5em 0.4em 5em;
+        text-shadow: 0 0 0.75em #444;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+        font: bold 16px/1.2em Arial, Sans-Serif;
+        -webkit-text-shadow: 0 0 0.75em #444;
+        -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+        -webkit-transform: rotate(-45deg) scale(0.75, 1);
+        z-index: 10;
+      }
+      .sold_out:before {
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        margin: -0.3em -5em;
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        border: 2px rgba(255, 255, 255, 0.7) dashed;
+      }
 
+      &:hover {
         border-color: #999;
 
         footer {
-          opacity: 1.0;
+          opacity: 1;
         }
       }
-
     }
   }
 }
 
 main section.products-show {
-
   .product-detail {
     img.main-img {
       max-width: 100%;
     }
   }
 }
-
-
